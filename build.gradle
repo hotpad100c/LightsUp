@@ -28,6 +28,17 @@ sourceSets.main.resources {
 
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
+    exclusiveContent {
+        forRepositories(
+                maven { // Anvil Lib
+                    name = "Cjsah Maven"
+                    url = "https://server.cjsah.net:1002/maven/"
+                }
+        )
+        filter {
+            includeGroup "dev.anvilcraft.lib"
+        }
+    }
 }
 
 base {
@@ -134,6 +145,7 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    implementation "dev.anvilcraft.lib:anvillib-rendering-neoforge-26.1:2.0.0+snapshot.475"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

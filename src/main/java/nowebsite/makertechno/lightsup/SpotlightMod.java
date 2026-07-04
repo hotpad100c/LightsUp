@@ -16,7 +16,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 @Mod(SpotlightMod.MODID)
@@ -59,18 +58,17 @@ public class SpotlightMod {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         BLOCK_ENTITY_TYPES.register(modEventBus);
-        
+        modEventBus.addListener(SpotlightPipelines::register);
         modEventBus.addListener(this::clientSetup);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            // 注册渲染器
             BlockEntityRenderers.register(SPOTLIGHT_BE.get(), SpotlightRenderer::new);
         });
     }
 
-    private static @NotNull ResourceKey<Block> getId(Identifier name) {
+    private static ResourceKey<Block> getId(Identifier name) {
         return ResourceKey.create(Registries.BLOCK, name);
     }
 }
