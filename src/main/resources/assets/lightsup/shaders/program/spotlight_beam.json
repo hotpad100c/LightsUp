@@ -1,0 +1,16 @@
+{
+  "vertex": "core/spotlight_vertex",
+  "fragment": "core/spotlight_fragment",
+  "attributes": [
+    "Position",
+    "Color",
+    "UV0",
+    "UV2"
+  ],
+  "uniforms": [
+    "ModelViewMat",
+    "ProjMat",
+    "Sampler0",
+    "Sampler2"
+  ]
+}
