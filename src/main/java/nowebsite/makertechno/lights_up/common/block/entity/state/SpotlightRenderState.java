@@ -1,8 +1,7 @@
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.common.block.entity.state;
 
 import net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState;
 import net.minecraft.core.Direction;
-import org.joml.Vector3f;
 
 public class SpotlightRenderState extends BlockEntityRenderState {
     // 光束参数

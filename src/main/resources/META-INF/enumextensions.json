@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/item/ItemUseAnimation",
+      "name": "LIGHTS_UP_SHAKING",
+      "constructor": "(ILjava/lang/String;Z)V",
+      "parameters": {
+        "class": "nowebsite/makertechno/lights_up/common/ModCommonEnumParams",
+        "field": "CUSTOM_SWINGING_USE_ANIM_ENUM_PROXY"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "LIGHTS_UP_SHAKING",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "nowebsite/makertechno/lights_up/client/ModClientEnumParams",
+        "field": "SHAKING_STICK"
+      }
+    }
+  ]
+}

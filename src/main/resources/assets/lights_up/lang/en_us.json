@@ -1,0 +1,15 @@
+{
+  "item.lights_up.light_stick_blue": "Blue Light Stick",
+  "item.lights_up.light_stick_cyan": "Cyan Light Stick",
+  "item.lights_up.light_stick_green": "Green Light Stick",
+  "item.lights_up.light_stick_light_blue": "Light Blue Light Stick",
+  "item.lights_up.light_stick_lime": "Lime Light Stick",
+  "item.lights_up.light_stick_magenta": "Magenta Light Stick",
+  "item.lights_up.light_stick_orange": "Orange Light Stick",
+  "item.lights_up.light_stick_pink": "Pink Light Stick",
+  "item.lights_up.light_stick_purple": "Purple Light Stick",
+  "item.lights_up.light_stick_red": "Red Light Stick",
+  "item.lights_up.light_stick_white": "White Light Stick",
+  "item.lights_up.light_stick_yellow": "Yellow Light Stick",
+  "itemGroup.lights_up.call" : "Cheer on"
+}

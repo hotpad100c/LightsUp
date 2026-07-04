@@ -1,4 +1,4 @@
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import nowebsite.makertechno.lights_up.common.block.entity.SpotlightBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 

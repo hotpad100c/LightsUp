@@ -1,4 +1,4 @@
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.client.render;
 
 import net.minecraft.client.renderer.rendertype.RenderType;
 

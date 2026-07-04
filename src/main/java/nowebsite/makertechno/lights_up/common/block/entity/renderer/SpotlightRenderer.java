@@ -1,4 +1,4 @@
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.common.block.entity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -12,6 +12,10 @@ import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.core.Direction;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import nowebsite.makertechno.lights_up.client.render.SpotlightShaderManager;
+import nowebsite.makertechno.lights_up.common.block.SpotlightBlock;
+import nowebsite.makertechno.lights_up.common.block.entity.SpotlightBlockEntity;
+import nowebsite.makertechno.lights_up.common.block.entity.state.SpotlightRenderState;
 import org.joml.Matrix4f;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,8 +24,9 @@ public class SpotlightRenderer implements BlockEntityRenderer<@NotNull Spotlight
 
     public SpotlightRenderer(BlockEntityRendererProvider.Context context) {
     }
+
     @Override
-    public SpotlightRenderState createRenderState() {
+    public @NotNull SpotlightRenderState createRenderState() {
         return new SpotlightRenderState();
     }
 
@@ -54,11 +59,12 @@ public class SpotlightRenderer implements BlockEntityRenderer<@NotNull Spotlight
     public void submit(SpotlightRenderState state, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, CameraRenderState camera) {
         
         poseStack.pushPose();
+        poseStack.translate(0.5,0.5,0.5);
         applyFacingRotation(poseStack, state.facing);
         PoseStack.Pose pose = poseStack.last().copy();
         // 使用新的 RenderType
         submitNodeCollector.submitCustomGeometry(
-            poseStack, 
+            poseStack,
             SpotlightShaderManager.getBeamRenderType(),
             (pose1, consumer) -> renderBeamGeometry(pose, consumer, state, false)
         );
@@ -75,7 +81,7 @@ public class SpotlightRenderer implements BlockEntityRenderer<@NotNull Spotlight
 
     private void renderBeamGeometry(PoseStack.Pose pose, VertexConsumer consumer, SpotlightRenderState state, boolean outOnly) {
         Matrix4f matrix = pose.pose();
-
+        
         float beamLength = state.beamLength;
         float baseRadius = (float) (beamLength * Math.tan(Math.toRadians(state.coneAngle)));
 
@@ -112,7 +118,7 @@ public class SpotlightRenderer implements BlockEntityRenderer<@NotNull Spotlight
         for (int i = 0; i < segments; i++) {
             float angle1 = (float) (2 * Math.PI * i / segments);
             float angle2 = (float) (2 * Math.PI * (i + 1) / segments);
-
+            
             float x1 = (float) (endRadius * Math.cos(angle1));
             float z1 = (float) (endRadius * Math.sin(angle1));
             float x2 = (float) (endRadius * Math.cos(angle2));
@@ -128,10 +134,10 @@ public class SpotlightRenderer implements BlockEntityRenderer<@NotNull Spotlight
             }
 
         }
-
+            
         drawEndCap(consumer, matrix, length, endRadius, fadeColor, segments);
-    }
-
+        }
+        
     private static int scaleAlpha(int argb, float factor) {
         int a = (int) (((argb >>> 24) & 0xFF) * factor);
         int r = ((argb >>> 16) & 0xFF);
