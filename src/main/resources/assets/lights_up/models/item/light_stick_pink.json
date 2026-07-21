@@ -1,0 +1,6 @@
+{
+	"parent": "lights_up:item/template/light_stick",
+	"textures": {
+		"light_stick": "lights_up:item/light_stick_pink"
+	}
+}

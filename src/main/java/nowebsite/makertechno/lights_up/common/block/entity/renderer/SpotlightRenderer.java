@@ -1,4 +1,4 @@
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.common.block.entity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -11,6 +11,10 @@ import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.core.Direction;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import nowebsite.makertechno.lights_up.client.render.SpotlightShaderManager;
+import nowebsite.makertechno.lights_up.common.block.SpotlightBlock;
+import nowebsite.makertechno.lights_up.common.block.entity.SpotlightBlockEntity;
+import nowebsite.makertechno.lights_up.common.block.entity.state.SpotlightRenderState;
 import org.joml.Matrix4f;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -58,7 +62,7 @@ public class SpotlightRenderer implements BlockEntityRenderer<@NotNull Spotlight
         
         // 使用新的 RenderType
         submitNodeCollector.submitCustomGeometry(
-            poseStack, 
+            poseStack,
             SpotlightShaderManager.SPOTLIGHT_BEAM,
             (pose, consumer) -> renderBeamGeometry(pose, consumer, state)
         );

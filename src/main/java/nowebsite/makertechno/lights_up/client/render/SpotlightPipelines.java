@@ -1,4 +1,4 @@
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.client.render;
 
 import com.mojang.blaze3d.pipeline.BlendFunction;
 import com.mojang.blaze3d.pipeline.ColorTargetState;
@@ -9,12 +9,13 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.rendertype.RenderSetup;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.resources.Identifier;
+import nowebsite.makertechno.lights_up.LightsUp;
 
 public class SpotlightPipelines {
     
     // 注册聚光灯渲染管道
     public static final RenderPipeline SPOTLIGHT_BEAM = RenderPipeline.builder(RenderPipelines.BLOCK_SNIPPET)
-            .withLocation(Identifier.fromNamespaceAndPath(SpotlightMod.MODID, "pipeline/spotlight_beam"))
+            .withLocation(Identifier.fromNamespaceAndPath(LightsUp.MOD_ID, "programm/spotlight_beam"))
             .withShaderDefine("SPOTLIGHT_BEAM")
             .withColorTargetState(new ColorTargetState(BlendFunction.TRANSLUCENT))
             .withDepthStencilState(new DepthStencilState(CompareOp.LESS_THAN_OR_EQUAL, false))
@@ -22,7 +23,7 @@ public class SpotlightPipelines {
 
     // 如果需要发光效果（不受光照影响）
     public static final RenderPipeline SPOTLIGHT_BEAM_UNLIT = RenderPipeline.builder(RenderPipelines.ENTITY_SNIPPET)
-            .withLocation(Identifier.fromNamespaceAndPath(SpotlightMod.MODID, "pipeline/spotlight_beam_unlit"))
+            .withLocation(Identifier.fromNamespaceAndPath(LightsUp.MOD_ID, "programm/spotlight_beam_unlit"))
             .withShaderDefine("SPOTLIGHT_BEAM_UNLIT")
             .withShaderDefine("NO_OVERLAY")
             .withColorTargetState(new ColorTargetState(BlendFunction.TRANSLUCENT))
