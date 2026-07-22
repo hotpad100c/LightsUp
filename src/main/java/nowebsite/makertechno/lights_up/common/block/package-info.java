@@ -1,6 +1,6 @@
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.common.block;
 
 import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 

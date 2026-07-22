@@ -1,8 +1,9 @@
-package nowebsite.makertechno.lightsup;
+package nowebsite.makertechno.lights_up.common.block.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import nowebsite.makertechno.lights_up.common.init.LUBlockReg;
 
 public class SpotlightBlockEntity extends BlockEntity {
     // 颜色控制
@@ -16,7 +17,7 @@ public class SpotlightBlockEntity extends BlockEntity {
     private float coneAngle = 20.0f; // 锥角 (度)
 
     public SpotlightBlockEntity(BlockPos pos, BlockState state) {
-        super(SpotlightMod.SPOTLIGHT_BE.get(), pos, state);
+        super(LUBlockReg.SPOTLIGHT_BE.get(), pos, state);
     }
 
     // Getters / Setters
